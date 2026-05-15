@@ -64,15 +64,26 @@ agent_skills/
 ├── _helpers/                        # shared reference material (excluded from install)
 │   └── effect-ts-references/        # _agents, _commands, _references bundles
 │
-├── effect-ts/                       # Effect-TS skills (best-practices + topic-specific)
-├── workflow/                        # Clean-architecture / Codex workflow skills
-├── testing/                         # Playwright + TDD
-├── design/                          # frontend-design, domain-design
-├── planning/                        # PRD/issue creation, ideation, grilling
-├── dev-process/                     # ADR, diagnosis, codebase architecture
-├── meta/                            # skill-authoring + discovery
-└── communication/                   # output-style skills (caveman, zoom-out)
+├── effect-ts/                       # Effect-TS skills — see effect-ts/README.md
+├── workflow/                        # Clean-architecture / Codex workflows — see workflow/README.md
+├── testing/                         # Playwright + TDD — see testing/README.md
+├── design/                          # FSD + DDD design skills — see design/README.md
+├── planning/                        # PRD/issue creation, ideation, grilling — see planning/README.md
+├── dev-process/                     # ADR, diagnosis, architecture — see dev-process/README.md
+├── meta/                            # skill-authoring + discovery — see meta/README.md
+└── communication/                   # output-style skills — see communication/README.md
 ```
+
+Each category has its own README with a table of every skill in it and what it does:
+
+- [`effect-ts/README.md`](effect-ts/README.md) — 23 Effect-TS reference skills
+- [`workflow/README.md`](workflow/README.md) — 16 clean-architecture & Codex-workflow skills
+- [`testing/README.md`](testing/README.md) — Playwright trio + TDD
+- [`design/README.md`](design/README.md) — domain-design, frontend-design
+- [`planning/README.md`](planning/README.md) — ideation, grilling, plan-to-issues/PRD
+- [`dev-process/README.md`](dev-process/README.md) — ADR drafting, diagnosis, architecture review
+- [`meta/README.md`](meta/README.md) — write-a-skill, find-skills
+- [`communication/README.md`](communication/README.md) — caveman, zoom-out
 
 Each skill is a directory inside its category with `SKILL.md` (required) plus optional supporting files:
 
