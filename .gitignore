@@ -5,4 +5,4 @@
 .idea/
 
 # Project-specific skills kept local only
-playwright-e2e/
+testing/playwright-e2e/
