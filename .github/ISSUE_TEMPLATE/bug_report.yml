@@ -1,0 +1,40 @@
+name: Bug report
+description: A skill isn't doing what its description claims, install.sh broke, or the marketplace install fails
+labels: ["bug"]
+body:
+  - type: input
+    id: skill
+    attributes:
+      label: Which skill or plugin
+      description: e.g. `effect-ts:schema`, `dev-process:diagnose`, or `install.sh`
+      placeholder: "effect-ts:schema"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: Be specific. Include the exact prompt you used if relevant.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+
+  - type: input
+    id: install-method
+    attributes:
+      label: How did you install
+      description: Plugin marketplace, clone + install.sh, or manual copy?
+      placeholder: "/plugin install effect-ts@marzun9620-skills"
+
+  - type: input
+    id: claude-code-version
+    attributes:
+      label: Claude Code version
+      description: Run `claude --version` if installing as a CLI plugin.

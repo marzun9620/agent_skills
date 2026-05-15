@@ -1,21 +1,39 @@
 # agent_skills
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Latest release](https://img.shields.io/github/v/release/marzun9620/agent_skills)](https://github.com/marzun9620/agent_skills/releases)
 [![Last commit](https://img.shields.io/github/last-commit/marzun9620/agent_skills)](https://github.com/marzun9620/agent_skills/commits/main)
 [![GitHub stars](https://img.shields.io/github/stars/marzun9620/agent_skills?style=social)](https://github.com/marzun9620/agent_skills/stargazers)
 
-> **59 ready-to-use [Claude Code](https://code.claude.com) skills**, grouped into 8 installable plugins. TDD, diagnosis, ADR drafting, Playwright patterns, Effect-TS reference, and more.
-
-Each skill is a `SKILL.md` that Claude Code auto-loads when its trigger phrases match what you're asking — no manual invocation required. Pick a plugin, install it once, and the skills are available in every project.
-
-## Install
-
-The fastest path: **inside any Claude Code session**, add this marketplace and install whichever plugin you want.
+> **A plugin marketplace for [Claude Code](https://code.claude.com).** 59 curated skills covering TDD, debugging, ADR drafting, Playwright patterns, Effect-TS reference, plan stress-testing, and more. Install in one line:
 
 ```text
 /plugin marketplace add marzun9620/agent_skills
-/plugin install <plugin-name>@marzun9620-skills
 ```
+
+Then `/plugin install <plugin>@marzun9620-skills` for any of the 8 plugins below. Claude Code auto-loads each skill when its trigger phrases match what you're asking — no manual invocation needed.
+
+<!-- Demo GIF goes here once recorded — see docs/RECORDING_DEMO.md -->
+<!-- ![demo](docs/demo.gif) -->
+
+## What a skill actually does
+
+Skills are markdown files that Claude reads on-demand. You don't invoke them by name; you describe a task and Claude picks the right one based on its `description:` field:
+
+```text
+You: "Help me write tests for this auth flow."
+→ The tdd skill loads, guides you through red-green-refactor TDD.
+
+You: "I'm torn between Postgres and DynamoDB for our event store."
+→ The adr-drafter skill loads, walks you through the trade-offs and writes an ADR.
+
+You: "What changed in this branch? Is anything risky?"
+→ Skills from dev-process load with diff context inlined.
+```
+
+You can also invoke a skill directly with `/<plugin>:<skill>` if you want — e.g. `/dev-process:diagnose`. See [the Anthropic docs](https://code.claude.com/docs/en/skills) for the full mental model.
+
+## Install
 
 ### Recommended starter pack
 

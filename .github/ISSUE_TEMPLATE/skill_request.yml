@@ -1,0 +1,54 @@
+name: New skill request
+description: Suggest a new skill (or improvement to an existing one)
+labels: ["enhancement"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Proposed skill name
+      placeholder: "deploy-checklist"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What should the skill do
+      description: One paragraph. What problem does it solve?
+    validations:
+      required: true
+
+  - type: textarea
+    id: triggers
+    attributes:
+      label: What prompts should auto-load this skill
+      description: Example phrases a user would say that should trigger it.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Which plugin (category) would it live in
+      options:
+        - effect-ts
+        - testing
+        - design
+        - planning
+        - dev-process
+        - meta
+        - communication
+        - new plugin (please specify in description)
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: bar
+    attributes:
+      label: Quality bar (see CONTRIBUTING.md)
+      options:
+        - label: Generally applicable (not tied to one private codebase)
+          required: true
+        - label: English-first in the `description:` field
+          required: true
+        - label: I'm willing to draft the PR if accepted
