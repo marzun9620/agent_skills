@@ -111,6 +111,16 @@ Each category folder is a self-contained plugin. The marketplace at the root lis
 
 **`install.sh` reports a conflict.** Something in `~/.claude/skills/` already uses that name. The script never overwrites — `rm` the existing entry first, or use the plugin marketplace path instead (plugin skills are namespaced, no conflicts).
 
+## Attribution
+
+This repo is a curated collection. Most of the skills in it were authored by other people, and I'm just packaging them for easier installation:
+
+- **`effect-ts` plugin (23 skills) + `_helpers/`** — by [**Andrue Anderson**](https://github.com/andrueandersoncs/claude-skill-effect-ts) (MIT)
+- **14 skills across `planning`, `dev-process`, `meta`, `testing`, `communication`** — by [**Matt Pocock**](https://github.com/mattpocock/skills) (MIT)
+- **`workflow-*` plugin (16 skills)** — original to this repo
+
+See [`NOTICE.md`](NOTICE.md) for the full per-skill attribution table and verbatim upstream licenses. If you find a misattribution, please open an issue.
+
 ## License
 
-[MIT](LICENSE). Use them, fork them, ship them with your tools.
+[MIT](LICENSE) for the maintainer's contributions; upstream MIT licenses for third-party skills (see [`NOTICE.md`](NOTICE.md)). Use them, fork them, ship them with your tools — but preserve the original copyright notices.

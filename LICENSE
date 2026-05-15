@@ -1,6 +1,16 @@
 MIT License
 
-Copyright (c) 2026 marzun9620
+Copyright (c) 2026 marzun9620 (curator / for original contributions only)
+
+This license covers the parts of this repository authored by the maintainer:
+the `workflow-*` plugin, install.sh, the marketplace catalog and plugin
+manifests, all README/NOTICE/CONTRIBUTING files, and the _template/ starter.
+
+Other skills in this repository are authored by third parties and remain
+copyrighted by their respective authors. See NOTICE.md for the full list of
+upstream sources and their license texts. Each third-party contribution is
+also MIT-licensed under its own copyright holder; the same permissions and
+conditions apply.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
