@@ -1,6 +1,8 @@
 # Contributing
 
-Thanks for thinking about contributing. This repo is a curated personal collection, so the bar for new skills is:
+Thanks for thinking about contributing. This is a personal collection of Claude Code skills I use day-to-day, but the goal is for anyone to pick up what's useful and contribute back what they've built. The bar is low — if it's useful to more than one project and isn't a thin SaaS wrapper, it probably fits.
+
+A few conventions to keep the repo consistent:
 
 1. **General applicability.** A skill should be useful to more than one project. Things tied to a specific repo, ADR, or internal stack belong in a private fork.
 2. **English-first.** `description:` frontmatter must be in English so trigger-matching works for the broadest audience. Skill bodies can include other languages, but the description has to be readable to everyone.
