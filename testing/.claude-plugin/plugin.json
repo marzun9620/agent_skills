@@ -1,9 +1,9 @@
 {
   "name": "testing",
-  "description": "Test-authoring skills: TDD red-green-refactor loop, plus Playwright E2E (CLI, test runner, and project conventions).",
+  "description": "Test-authoring skills: TDD red-green-refactor loop (originally by Matt Pocock, MIT), plus Playwright E2E (CLI, test runner, and project conventions). See NOTICE.md for per-skill attribution.",
   "version": "1.0.0",
   "author": {
-    "name": "marzun9620",
-    "url": "https://github.com/marzun9620"
+    "name": "Mixed authors — see NOTICE.md",
+    "url": "https://github.com/marzun9620/agent_skills/blob/main/NOTICE.md"
   }
 }

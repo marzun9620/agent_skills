@@ -1,9 +1,10 @@
 {
   "name": "meta",
-  "description": "Skills about skills — find existing ones, write new ones, bootstrap a curated personal set.",
+  "description": "Skills about skills — find existing ones, write new ones, bootstrap a curated personal set. Skills authored by Matt Pocock (MIT); redistributed here with attribution — see NOTICE.md.",
   "version": "1.0.0",
   "author": {
-    "name": "marzun9620",
-    "url": "https://github.com/marzun9620"
-  }
+    "name": "Matt Pocock",
+    "url": "https://github.com/mattpocock/skills"
+  },
+  "homepage": "https://github.com/mattpocock/skills"
 }

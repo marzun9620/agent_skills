@@ -1,9 +1,9 @@
 {
   "name": "planning",
-  "description": "Discovery-to-spec skills: ideation, plan-stress-testing through interview-style grilling, and converting plans into PRDs and issues.",
+  "description": "Discovery-to-spec skills: ideation, plan-stress-testing through interview-style grilling, and converting plans into PRDs and issues. Skills originally authored by Matt Pocock (MIT); curated and redistributed here with attribution — see NOTICE.md.",
   "version": "1.0.0",
   "author": {
-    "name": "marzun9620",
-    "url": "https://github.com/marzun9620"
+    "name": "Matt Pocock (originals); marzun9620 (curator)",
+    "url": "https://github.com/mattpocock/skills"
   }
 }
