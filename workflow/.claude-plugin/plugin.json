@@ -1,0 +1,9 @@
+{
+  "name": "codex-effect-workflows",
+  "description": "[NICHE] 16 skills for Codex CLI workflows in a layered Effect-TS + Drizzle + Hono architecture. Bilingual (Japanese/English). Install only if you've adopted this specific stack.",
+  "version": "1.0.0",
+  "author": {
+    "name": "marzun9620",
+    "url": "https://github.com/marzun9620"
+  }
+}

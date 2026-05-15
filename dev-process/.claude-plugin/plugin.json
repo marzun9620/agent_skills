@@ -1,0 +1,9 @@
+{
+  "name": "dev-process",
+  "description": "Engineering process skills: ADR drafting, disciplined bug diagnosis, and codebase architecture review. Most skills originally by Matt Pocock (MIT); redistributed with attribution — see NOTICE.md.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Mixed authors — see NOTICE.md",
+    "url": "https://github.com/marzun9620/agent_skills/blob/main/NOTICE.md"
+  }
+}

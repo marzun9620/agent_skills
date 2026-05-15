@@ -1,0 +1,10 @@
+{
+  "name": "communication",
+  "description": "Output-style skills that change how Claude writes responses (caveman compression, zoom-out perspective shift). Authored by Matt Pocock (MIT); redistributed here with attribution — see NOTICE.md.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Matt Pocock",
+    "url": "https://github.com/mattpocock/skills"
+  },
+  "homepage": "https://github.com/mattpocock/skills"
+}

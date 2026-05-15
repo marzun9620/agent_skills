@@ -1,0 +1,10 @@
+{
+  "name": "effect-ts",
+  "description": "23 reference skills for Effect-TS — schema, runtime, error management, streams, testing, and more. Use when writing TypeScript with the Effect library. Authored by Andrue Anderson (MIT); redistributed here with attribution — see NOTICE.md.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Andrue Anderson",
+    "url": "https://github.com/andrueandersoncs/claude-skill-effect-ts"
+  },
+  "homepage": "https://github.com/andrueandersoncs/claude-skill-effect-ts"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "design",
+  "description": "Architecture-shaping skills: Domain-Driven Design building blocks (Effect Schema) and Feature-Sliced Design frontend components.",
+  "version": "1.0.0",
+  "author": {
+    "name": "marzun9620",
+    "url": "https://github.com/marzun9620"
+  }
+}

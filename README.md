@@ -1,139 +1,126 @@
 # agent_skills
 
-Personal Claude Code skills, source-controlled here and symlinked into `~/.claude/skills/` so they're available across every project.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Last commit](https://img.shields.io/github/last-commit/marzun9620/agent_skills)](https://github.com/marzun9620/agent_skills/commits/main)
+[![GitHub stars](https://img.shields.io/github/stars/marzun9620/agent_skills?style=social)](https://github.com/marzun9620/agent_skills/stargazers)
 
-## Quick start (consume this repo)
+> **59 ready-to-use [Claude Code](https://code.claude.com) skills**, grouped into 8 installable plugins. TDD, diagnosis, ADR drafting, Playwright patterns, Effect-TS reference, and more.
 
-### Install everything
+Each skill is a `SKILL.md` that Claude Code auto-loads when its trigger phrases match what you're asking — no manual invocation required. Pick a plugin, install it once, and the skills are available in every project.
+
+## Install
+
+The fastest path: **inside any Claude Code session**, add this marketplace and install whichever plugin you want.
+
+```text
+/plugin marketplace add marzun9620/agent_skills
+/plugin install <plugin-name>@marzun9620-skills
+```
+
+### Recommended starter pack
+
+If you're new to skills, install these four — they're broadly useful regardless of your stack:
+
+```text
+/plugin install planning@marzun9620-skills      # brainstorming, grilling, plans → issues
+/plugin install dev-process@marzun9620-skills   # ADR, diagnosis, architecture review
+/plugin install testing@marzun9620-skills       # TDD + Playwright
+/plugin install communication@marzun9620-skills # output-style toggles (caveman, zoom-out)
+```
+
+Then add `effect-ts` if you write TypeScript with [Effect](https://effect.website), or `design` if you do FSD frontends or DDD backends.
+
+### Full plugin list
+
+| Plugin | Skills | What's inside |
+|---|---:|---|
+| [`effect-ts`](effect-ts/) | 23 | Schema, runtime, error management, streams, testing, and every other corner of [Effect-TS](https://effect.website). |
+| [`planning`](planning/) | 6 | brainstorming, grill-me, grill-with-docs, to-issues, to-prd, triage. |
+| [`testing`](testing/) | 4 | TDD red-green-refactor + Playwright (CLI, test runner, project conventions). |
+| [`dev-process`](dev-process/) | 3 | adr-drafter, diagnose, improve-codebase-architecture. |
+| [`meta`](meta/) | 3 | write-a-skill, find-skills, setup-matt-pocock-skills. |
+| [`design`](design/) | 2 | domain-design (DDD with Effect Schema), frontend-design (FSD). |
+| [`communication`](communication/) | 2 | caveman (token compression), zoom-out (perspective shift). |
+| [`codex-effect-workflows`](workflow/) | 16 | **[NICHE]** Codex CLI workflows for layered Effect-TS + Drizzle + Hono backends. Bodies are mostly Japanese. |
+
+### Alternative install: clone & symlink
+
+If you'd rather have the skills as personal-scope rather than plugins (so they invoke without a plugin namespace), clone and run `install.sh`:
 
 ```bash
-git clone <repo-url> ~/agent_skills      # or wherever you want it
+git clone https://github.com/marzun9620/agent_skills.git ~/agent_skills
 cd ~/agent_skills
-./install.sh                              # symlinks every skill into ~/.claude/skills/
+./install.sh                                 # install all 59
+./install.sh --list                          # list available
+./install.sh tdd diagnose adr-drafter        # install just specific ones
 ```
 
-Open Claude Code in any project; all skills are immediately discoverable via `/<skill-name>` or natural-language matching against each skill's `description`.
+The script symlinks each skill into `~/.claude/skills/<skill-name>/`. It auto-repairs stale symlinks on re-run, never overwrites existing entries from other sources (like `~/.agents/skills/`), and works on macOS + Linux. Windows users: use WSL or the plugin marketplace path.
 
-### Install only specific skills
+## How skills work
+
+Claude Code reads `SKILL.md` files containing YAML frontmatter (`description`, `name`) plus markdown instructions. When you describe a task, Claude matches it against the `description` field of every loaded skill — when there's a hit, that skill's body is loaded into the prompt for the rest of the session.
+
+Three concrete consequences:
+
+- Skill names you can invoke directly: `/effect-ts:schema`, `/dev-process:diagnose`, etc. The plugin name is the namespace.
+- You can also just describe the task and Claude picks the right skill: "help me write tests for this" → `tdd` activates.
+- Skill bodies stay loaded across turns, so they're a recurring token cost — keep them concise. See [Anthropic's docs](https://code.claude.com/docs/en/skills) for the full mental model.
+
+## Add your own skill
 
 ```bash
-./install.sh --list                       # see what's available
-./install.sh tdd diagnose adr-drafter     # symlink just these three
+cp -R _template <category>/skills/my-new-skill
+$EDITOR <category>/skills/my-new-skill/SKILL.md
+./install.sh my-new-skill                    # if you cloned the repo
 ```
 
-Re-running with different names later is additive — already-linked skills are left alone, new ones get linked.
-
-### Grab a single skill *without* cloning the whole repo
-
-If you only want one skill (e.g. for one project), copy the directory into the project's `.claude/skills/`:
-
-```bash
-cd /path/to/some-project
-mkdir -p .claude/skills
-# clone the repo somewhere temporary, then:
-cp -R /tmp/agent_skills/effect-ts-schema .claude/skills/
-# commit it into the project repo so your teammates get it too
-git add .claude/skills/effect-ts-schema && git commit -m "Add effect-ts-schema skill"
-```
-
-Project-scope skills only apply inside that repo. Personal-scope (via `install.sh`) applies everywhere.
-
-### Uninstall
-
-Personal-scope installs are just symlinks under `~/.claude/skills/`. Remove with:
-
-```bash
-rm ~/.claude/skills/<skill-name>          # one skill
-# or all of them:
-./install.sh --list | xargs -I{} rm -f ~/.claude/skills/{}
-```
-
-## How it works
-
-Claude Code auto-discovers skills from `~/.claude/skills/<skill-name>/SKILL.md` ([docs](https://code.claude.com/docs/en/skills)). This repo is the **source of truth**; `install.sh` creates a symlink in `~/.claude/skills/` for each top-level directory here, so editing a `SKILL.md` here updates the skill in every project — Claude Code watches the directory for live changes and picks them up within the current session.
+If your skill is broadly useful, PRs welcome — see [CONTRIBUTING.md](CONTRIBUTING.md) for the bar and the conventions. If it's project-specific, fork the repo or keep it in your own personal `.claude/skills/`.
 
 ## Layout
 
-Skills are grouped into category folders for browsing. The folder structure is **purely organizational** — `install.sh` walks the tree recursively and discovers skills by their `SKILL.md`. The symlinks it creates in `~/.claude/skills/` stay flat (one per skill), and you still invoke each skill the same way (`/skill-name` or natural-language match).
-
 ```
 agent_skills/
+├── .claude-plugin/marketplace.json     ← marketplace catalog
 ├── README.md
-├── install.sh                       # recursive symlink installer
-├── _template/                       # copy this when starting a new skill (excluded from install)
-├── _helpers/                        # shared reference material (excluded from install)
-│   └── effect-ts-references/        # _agents, _commands, _references bundles
+├── LICENSE
+├── CONTRIBUTING.md
+├── install.sh                          ← clone-and-symlink installer
+├── _template/                          ← starter SKILL.md
+├── _helpers/effect-ts-references/      ← shared reference material
 │
-├── effect-ts/                       # Effect-TS skills — see effect-ts/README.md
-├── workflow/                        # Clean-architecture / Codex workflows — see workflow/README.md
-├── testing/                         # Playwright + TDD — see testing/README.md
-├── design/                          # FSD + DDD design skills — see design/README.md
-├── planning/                        # PRD/issue creation, ideation, grilling — see planning/README.md
-├── dev-process/                     # ADR, diagnosis, architecture — see dev-process/README.md
-├── meta/                            # skill-authoring + discovery — see meta/README.md
-└── communication/                   # output-style skills — see communication/README.md
+├── effect-ts/        .claude-plugin/plugin.json + skills/* + README.md
+├── workflow/         (codex-effect-workflows plugin)
+├── testing/
+├── design/
+├── planning/
+├── dev-process/
+├── meta/
+└── communication/
 ```
 
-Each category has its own README with a table of every skill in it and what it does:
-
-- [`effect-ts/README.md`](effect-ts/README.md) — 23 Effect-TS reference skills
-- [`workflow/README.md`](workflow/README.md) — 16 clean-architecture & Codex-workflow skills
-- [`testing/README.md`](testing/README.md) — Playwright trio + TDD
-- [`design/README.md`](design/README.md) — domain-design, frontend-design
-- [`planning/README.md`](planning/README.md) — ideation, grilling, plan-to-issues/PRD
-- [`dev-process/README.md`](dev-process/README.md) — ADR drafting, diagnosis, architecture review
-- [`meta/README.md`](meta/README.md) — write-a-skill, find-skills
-- [`communication/README.md`](communication/README.md) — caveman, zoom-out
-
-Each skill is a directory inside its category with `SKILL.md` (required) plus optional supporting files:
-
-```
-<category>/<skill-name>/
-├── SKILL.md           # required: frontmatter + instructions
-├── reference.md       # optional supporting docs
-└── scripts/           # optional bundled scripts
-```
-
-Directories starting with `_` (e.g. `_template/`, `_helpers/`) are excluded from installation. Use them for templates, shared reference material, or anything that isn't itself a registerable skill. The same rule applies at any depth in the tree.
-
-## Add a new skill
-
-Place it inside the most relevant category folder:
-
-```bash
-cp -R _template <category>/my-new-skill   # e.g. design/my-new-skill
-$EDITOR <category>/my-new-skill/SKILL.md
-./install.sh my-new-skill
-```
-
-The category folder doesn't affect anything functionally — pick whatever makes the skill easiest to find. If nothing fits, create a new category folder (or drop it at the repo root). Then in any project, type `/my-new-skill` or just describe the task — Claude will auto-invoke based on the `description` field.
-
-## Rules for `SKILL.md`
-
-- Frontmatter must include `description`. Put the key use case **first** — it's truncated at 1,536 chars and used for trigger matching.
-- Keep the body under ~500 lines / 1,500–2,000 words. Skill bodies stay in context for the rest of the session, so every line is a recurring token cost.
-- Move long reference material into sibling files (`reference.md`, `examples.md`, etc.) and link to them from `SKILL.md` — they only load when Claude reads them.
-- Bundled scripts run via bash; their source never enters context, only their output.
-
-## Useful frontmatter fields
-
-| Field | What it does |
-|---|---|
-| `description` | When Claude should invoke the skill (recommended) |
-| `disable-model-invocation: true` | Only you can run it via `/name` — Claude won't trigger it automatically. Use for actions with side effects (deploy, commit, send-slack). |
-| `user-invocable: false` | Hide from `/` menu; Claude can still load it as background context |
-| `allowed-tools` | Pre-approve tools while the skill is active (e.g. `Bash(git *) Read`) |
-| `context: fork` + `agent: Explore` | Run the skill in a subagent — keeps main context clean for research-heavy skills |
-| `paths` | Only auto-load when working in files matching globs |
-
-Full reference: <https://code.claude.com/docs/en/skills#frontmatter-reference>
+Each category folder is a self-contained plugin. The marketplace at the root lists all 8 with versions, descriptions, and source paths.
 
 ## Troubleshooting
 
-**A skill isn't showing up.** Check `ls -la ~/.claude/skills/<name>` — if it's missing, re-run `./install.sh <name>`. If the symlink exists but points somewhere unexpected, `readlink` it to see what's pointing where.
+**Skill doesn't show up after `/plugin install`.** Run `/plugin marketplace update` to refresh the catalog, then try the install again.
 
-**`install.sh` reports a conflict.** Something in `~/.claude/skills/` is already using that name (likely a symlink to another source, e.g. `~/.agents/skills/`, or a real directory). The script never overwrites — to switch sources, `rm` the existing entry first, then re-run install.
+**A skill isn't being auto-invoked when you'd expect.** Sharpen its `description:` field with trigger phrases — put what you'd actually type first. Anthropic truncates descriptions at 1,536 chars under context pressure (drops from the end).
 
-**Claude isn't auto-invoking my skill.** Sharpen the `description` field — put trigger phrases (the things you'd type) up front. Skill descriptions get truncated under context pressure, and the truncation drops from the end.
+**Too many skills, descriptions getting cut off.** Run `/doctor` — it reports the skill-listing budget overflow. Disable plugins you don't use, or set individual skills to `"name-only"` in `~/.claude/settings.json` under `skillOverrides`.
 
-**Too many skills, descriptions getting cut off.** Run `/doctor` in Claude Code — it reports if the skill-listing budget is overflowing. Hide rarely-used skills via `skillOverrides` in `~/.claude/settings.json` (`"name": "name-only"` or `"off"`).
+**`install.sh` reports a conflict.** Something in `~/.claude/skills/` already uses that name. The script never overwrites — `rm` the existing entry first, or use the plugin marketplace path instead (plugin skills are namespaced, no conflicts).
+
+## Attribution
+
+This repo is a curated collection. Most of the skills in it were authored by other people, and I'm just packaging them for easier installation:
+
+- **`effect-ts` plugin (23 skills) + `_helpers/`** — by [**Andrue Anderson**](https://github.com/andrueandersoncs/claude-skill-effect-ts) (MIT)
+- **14 skills across `planning`, `dev-process`, `meta`, `testing`, `communication`** — by [**Matt Pocock**](https://github.com/mattpocock/skills) (MIT)
+- **`workflow-*` plugin (16 skills)** — original to this repo
+
+See [`NOTICE.md`](NOTICE.md) for the full per-skill attribution table and verbatim upstream licenses. If you find a misattribution, please open an issue.
+
+## License
+
+[MIT](LICENSE) for the maintainer's contributions; upstream MIT licenses for third-party skills (see [`NOTICE.md`](NOTICE.md)). Use them, fork them, ship them with your tools — but preserve the original copyright notices.
