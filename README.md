@@ -54,29 +54,59 @@ Claude Code auto-discovers skills from `~/.claude/skills/<skill-name>/SKILL.md` 
 
 ## Layout
 
+Skills are grouped into category folders for browsing. The folder structure is **purely organizational** — `install.sh` walks the tree recursively and discovers skills by their `SKILL.md`. The symlinks it creates in `~/.claude/skills/` stay flat (one per skill), and you still invoke each skill the same way (`/skill-name` or natural-language match).
+
 ```
 agent_skills/
 ├── README.md
-├── install.sh                # symlinks every skill dir into ~/.claude/skills/
-├── _template/                # copy this when starting a new skill
-│   └── SKILL.md
-└── <skill-name>/
-    ├── SKILL.md              # required: frontmatter + instructions
-    ├── reference.md          # optional supporting docs
-    └── scripts/              # optional bundled scripts
+├── install.sh                       # recursive symlink installer
+├── _template/                       # copy this when starting a new skill (excluded from install)
+├── _helpers/                        # shared reference material (excluded from install)
+│   └── effect-ts-references/        # _agents, _commands, _references bundles
+│
+├── effect-ts/                       # Effect-TS skills — see effect-ts/README.md
+├── workflow/                        # Clean-architecture / Codex workflows — see workflow/README.md
+├── testing/                         # Playwright + TDD — see testing/README.md
+├── design/                          # FSD + DDD design skills — see design/README.md
+├── planning/                        # PRD/issue creation, ideation, grilling — see planning/README.md
+├── dev-process/                     # ADR, diagnosis, architecture — see dev-process/README.md
+├── meta/                            # skill-authoring + discovery — see meta/README.md
+└── communication/                   # output-style skills — see communication/README.md
 ```
 
-Directories starting with `_` (e.g. `_template/`, `effect-ts-skills/_agents/`) are excluded from installation — useful for templates, shared helpers, or reference material that isn't itself a registerable skill.
+Each category has its own README with a table of every skill in it and what it does:
+
+- [`effect-ts/README.md`](effect-ts/README.md) — 23 Effect-TS reference skills
+- [`workflow/README.md`](workflow/README.md) — 16 clean-architecture & Codex-workflow skills
+- [`testing/README.md`](testing/README.md) — Playwright trio + TDD
+- [`design/README.md`](design/README.md) — domain-design, frontend-design
+- [`planning/README.md`](planning/README.md) — ideation, grilling, plan-to-issues/PRD
+- [`dev-process/README.md`](dev-process/README.md) — ADR drafting, diagnosis, architecture review
+- [`meta/README.md`](meta/README.md) — write-a-skill, find-skills
+- [`communication/README.md`](communication/README.md) — caveman, zoom-out
+
+Each skill is a directory inside its category with `SKILL.md` (required) plus optional supporting files:
+
+```
+<category>/<skill-name>/
+├── SKILL.md           # required: frontmatter + instructions
+├── reference.md       # optional supporting docs
+└── scripts/           # optional bundled scripts
+```
+
+Directories starting with `_` (e.g. `_template/`, `_helpers/`) are excluded from installation. Use them for templates, shared reference material, or anything that isn't itself a registerable skill. The same rule applies at any depth in the tree.
 
 ## Add a new skill
 
+Place it inside the most relevant category folder:
+
 ```bash
-cp -R _template my-new-skill
-$EDITOR my-new-skill/SKILL.md
+cp -R _template <category>/my-new-skill   # e.g. design/my-new-skill
+$EDITOR <category>/my-new-skill/SKILL.md
 ./install.sh my-new-skill
 ```
 
-Then in any project, type `/my-new-skill` or just describe the task — Claude will auto-invoke based on the `description` field.
+The category folder doesn't affect anything functionally — pick whatever makes the skill easiest to find. If nothing fits, create a new category folder (or drop it at the repo root). Then in any project, type `/my-new-skill` or just describe the task — Claude will auto-invoke based on the `description` field.
 
 ## Rules for `SKILL.md`
 
