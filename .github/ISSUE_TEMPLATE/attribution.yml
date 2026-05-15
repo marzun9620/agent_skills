@@ -1,0 +1,39 @@
+name: Attribution correction
+description: A skill in this repo was authored by someone not credited in NOTICE.md, or credited incorrectly
+labels: ["attribution"]
+body:
+  - type: input
+    id: skill
+    attributes:
+      label: Which skill
+      placeholder: "design/skills/domain-design"
+    validations:
+      required: true
+
+  - type: input
+    id: original-source
+    attributes:
+      label: Where it originally came from
+      description: GitHub URL, blog post, video, etc.
+      placeholder: "https://github.com/..."
+    validations:
+      required: true
+
+  - type: input
+    id: original-author
+    attributes:
+      label: Original author's name / handle
+    validations:
+      required: true
+
+  - type: input
+    id: license
+    attributes:
+      label: Upstream license
+      placeholder: "MIT"
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Links, commit dates, anything that helps verify the claim.
