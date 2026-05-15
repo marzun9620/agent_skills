@@ -1,0 +1,8 @@
+.DS_Store
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Project-specific skills kept local only
+playwright-e2e/
