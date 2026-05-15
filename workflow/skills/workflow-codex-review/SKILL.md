@@ -1,9 +1,9 @@
 ---
 name: workflow-codex-review
 description: >
-  Codex CLI にコードレビューを委譲するスキル。read-only sandbox で実行。
-  Mode A: per-task review（git diff HEAD~1）、Mode B: PR review（gh pr diff）。
-  トリガー: /run レビュー、/review、Codex レビュー委譲、コードレビュー
+  Delegate code review to Codex CLI in a read-only sandbox.
+  Mode A: per-task review (git diff HEAD~1). Mode B: PR review (gh pr diff).
+  Triggers: /run review, /review, Codex review delegation, code review.
 version: 1.0.0
 ---
 

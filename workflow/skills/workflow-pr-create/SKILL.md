@@ -1,10 +1,10 @@
 ---
 name: workflow-pr-create
 description: >
-  PR 作成手順。task check 全通過を確認し、gh pr create で PR を作成。
-  plan の Linear ID があれば Linear 更新。
-  トリガー: PR作成、プルリクエスト、ship、gh pr create、
-  マージリクエスト、コードレビュー依頼
+  PR creation flow. Verify all task checks pass, then create the PR with
+  `gh pr create`. If the plan has a Linear ID, update Linear too.
+  Triggers: PR creation, pull request, ship, gh pr create,
+  merge request, code review request.
 version: 1.0.0
 ---
 

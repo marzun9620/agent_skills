@@ -1,10 +1,11 @@
 ---
 name: workflow-repository
 description: >
-  Repository（Port + Infrastructure）の実装手順。Port を Context.Tag で定義し、
-  Drizzle ORM で Layer.effect 実装。Integration test は real DB。
-  トリガー: repository 作成、Drizzle実装、port定義、DB操作、
-  infrastructure実装、Layer.effect、findById、データベース
+  Repository (Port + Infrastructure) implementation guide. Define the Port
+  as a Context.Tag and implement with Drizzle ORM via Layer.effect.
+  Integration tests use a real DB.
+  Triggers: repository creation, Drizzle implementation, port definition,
+  DB operation, infrastructure implementation, Layer.effect, findById, database.
 version: 1.1.0
 ---
 

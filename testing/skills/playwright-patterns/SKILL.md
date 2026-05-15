@@ -1,12 +1,12 @@
 ---
 name: playwright-patterns
-description: Patterns for writing Playwright E2E tests in this repo — POM structure, selector hierarchy, flow specs, waits, role contexts, dialog handling. Use when authoring or reviewing anything under /e2e.
+description: Patterns for writing Playwright E2E tests — POM structure, selector hierarchy, flow specs, waits, role contexts, dialog handling. Use when authoring or reviewing anything under /e2e.
 version: 1.0.0
 ---
 
 # Playwright Patterns
 
-Codified playbook for this repo's Playwright suite (`/e2e`). Distilled from production e2e work so the suite stays consistent as it grows. Read `e2e/docs/AUTHORING.md` alongside — this skill covers *how* to write tests; AUTHORING covers *where* and *what runs when*.
+Codified playbook for a Playwright E2E suite (typically in `/e2e`). Distilled from production e2e work so the suite stays consistent as it grows. This skill covers *how* to write tests; pair it with an in-repo `AUTHORING.md` that covers *where* and *what runs when*.
 
 ## Quick Reference: Critical Rules
 
@@ -178,7 +178,7 @@ See `references/selector-patterns.md` for full hierarchy. TL;DR:
 
 1. `getByRole('button', { name })` — accessibility-first
 2. `getByLabel('メールアドレス')` — best for form fields
-3. `getByTestId('page-admin-dashboard')` — once `data-pw` lands in frontendv2
+3. `getByTestId('page-admin-dashboard')` — once `data-pw` lands in the app
 4. `getByText(...)` — last resort
 5. `page.locator('.css-class')` — **forbidden**
 

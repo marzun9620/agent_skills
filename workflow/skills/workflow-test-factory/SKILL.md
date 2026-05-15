@@ -1,10 +1,10 @@
 ---
 name: workflow-test-factory
 description: >
-  テスト用 Factory の作成手順。DB に insert するための Factory パターン。
-  Drizzle ORM + Vitest 環境で使用。
-  トリガー: Factory 作成、テストデータ、テストヘルパー、
-  EntityFactory、create、build、テストフィクスチャ
+  Test Factory authoring guide — Factory pattern for inserting rows into
+  the database. Used in Drizzle ORM + Vitest environments.
+  Triggers: Factory creation, test data, test helper,
+  EntityFactory, create, build, test fixture.
 version: 1.0.0
 ---
 

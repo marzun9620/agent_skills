@@ -1,10 +1,11 @@
 ---
 name: workflow-usecase
 description: >
-  UseCase の実装手順。Effect<A, E, R> で定義し、Port 経由で infrastructure に依存。
-  E channel に全エラー型を明示。Unit test は Port を mock Layer で差し替え。
-  トリガー: usecase 作成、ビジネスロジック、ユースケース実装、
-  Effect.gen、Effect.fn、ドメインロジック
+  UseCase implementation guide. Define as Effect<A, E, R>; depend on
+  infrastructure through Ports. Make all error types explicit in the E channel.
+  In unit tests, swap Ports via mock Layers.
+  Triggers: usecase creation, business logic, usecase implementation,
+  Effect.gen, Effect.fn, domain logic.
 version: 1.1.0
 ---
 

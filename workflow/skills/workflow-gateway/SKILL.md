@@ -1,10 +1,11 @@
 ---
 name: workflow-gateway
 description: >
-  Gateway（外部 API クライアント）の実装手順。Port を Context.Tag で定義し、
-  Infrastructure で Layer.effect 実装。GatewayError でラップ、externalApiRetryPolicy 適用。
-  トリガー: gateway 作成、外部 API、Capsule、TableCheck、HTTP クライアント、
-  外部サービス連携、API 呼び出し、webhook
+  Gateway (external API client) implementation guide. Define the Port as a
+  Context.Tag and implement with Layer.effect in Infrastructure. Wrap errors
+  in GatewayError and apply externalApiRetryPolicy.
+  Triggers: gateway creation, external API, Capsule, TableCheck, HTTP client,
+  external service integration, API call, webhook.
 version: 1.1.0
 ---
 

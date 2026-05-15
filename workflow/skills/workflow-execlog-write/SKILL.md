@@ -1,10 +1,10 @@
 ---
 name: workflow-execlog-write
 description: >
-  実行ログ（.execlog/）への記録手順。各 task 完了後にエントリ追加。
-  Final Handoff エントリは plan 完了時。
-  トリガー: execlog、実行ログ、進捗記録、タスク完了記録、
-  night-run ログ、handoff
+  Recording entries to the execution log (.execlog/). Append an entry after
+  each task completes; write the Final Handoff entry when the plan completes.
+  Triggers: execlog, execution log, progress recording, task completion log,
+  night-run log, handoff.
 version: 1.0.0
 ---
 

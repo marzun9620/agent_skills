@@ -1,6 +1,6 @@
 ---
 name: domain-design
-description: Generate DDD building blocks (ValueObject, Error, Aggregate) using Effect + Schema. Use when creating new domain types, defining custom errors, or modeling aggregate lifecycles with invariant enforcement in /backendv2 folder.
+description: Generate DDD building blocks (ValueObject, Error, Aggregate) using Effect + Schema. Use when creating new domain types, defining custom errors, or modeling aggregate lifecycles with invariant enforcement.
 ---
 
 # Domain Building Blocks

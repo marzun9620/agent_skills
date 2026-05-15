@@ -1,10 +1,11 @@
 ---
 name: workflow-plan-update
 description: >
-  Plan ファイル（.planning/plans/）のチェックボックス更新と Status 管理。
-  task 完了時に checkbox を更新し、全 task 完了で done/ に移動。
-  トリガー: plan更新、タスク完了マーク、チェックボックス、
-  plan status、計画更新
+  Checkbox updates and status management for plan files (.planning/plans/).
+  Update checkboxes as tasks complete; move the plan to done/ once all
+  tasks are done.
+  Triggers: plan update, task completion mark, checkbox,
+  plan status, plan revision.
 version: 1.0.0
 ---
 

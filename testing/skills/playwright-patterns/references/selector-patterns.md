@@ -65,7 +65,7 @@ use: {
 }
 ```
 
-Once frontendv2 starts adding `data-pw` attributes, replace selectors in **new** POM code with `getByTestId(...)`. Existing POMs can migrate opportunistically.
+Once your app starts adding `data-pw` attributes, replace selectors in **new** POM code with `getByTestId(...)`. Existing POMs can migrate opportunistically.
 
 ### Naming convention to recommend to frontend
 

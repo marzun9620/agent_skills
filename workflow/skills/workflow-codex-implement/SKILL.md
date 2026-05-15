@@ -1,9 +1,9 @@
 ---
 name: workflow-codex-implement
 description: >
-  Codex CLI に plan の 1 task を TDD 実装させるスキル。
-  `codex exec --full-auto` の呼び出しパターン、Resume（修正指示）、Post-check を定義。
-  トリガー: /run、Codex 実装委譲、TDD 実装、plan task 実行
+  Delegate one plan task to Codex CLI for TDD implementation. Defines the
+  `codex exec --full-auto` invocation pattern, Resume (corrections), and Post-check.
+  Triggers: /run, Codex implementation delegation, TDD implementation, plan task execution.
 version: 1.0.0
 ---
 

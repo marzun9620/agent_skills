@@ -1,10 +1,11 @@
 ---
 name: workflow-adapter-handler
 description: >
-  HTTP Handler（Hono + OpenAPI）の実装手順。adapter 層のみ Effect.runPromise 許可。
-  describeRoute で OpenAPI 定義、Presenter で Domain → DTO 変換。
-  トリガー: API endpoint 作成、Hono handler、HTTP adapter、REST API、
-  OpenAPI、describeRoute、ルーティング
+  HTTP Handler implementation guide (Hono + OpenAPI). Only the adapter layer
+  is allowed to call Effect.runPromise. Use describeRoute for OpenAPI definitions
+  and Presenter for Domain → DTO conversion.
+  Triggers: API endpoint creation, Hono handler, HTTP adapter, REST API,
+  OpenAPI, describeRoute, routing.
 version: 1.1.0
 ---
 

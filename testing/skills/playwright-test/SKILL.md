@@ -1,6 +1,6 @@
 ---
 name: playwright-test
-description: Playwright Test (E2E) のベストプラクティスとリファレンス。テストの書き方、固定 wait 回避、ネットワークトリガー、DnD、GitHub Actions での shard/retry 設定など。Playwright テストを書く・レビュー・CI 設定するときに使用。
+description: Playwright Test (E2E) best practices and reference. Covers test authoring, avoiding fixed waits, network triggers, drag-and-drop, and shard/retry configuration in GitHub Actions. Use when writing, reviewing, or setting up CI for Playwright tests.
 ---
 
 # Playwright Test

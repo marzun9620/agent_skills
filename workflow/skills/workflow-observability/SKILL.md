@@ -1,12 +1,12 @@
 ---
 name: workflow-observability
 description: >
-  ログ・トレース・メトリクスの実装ルール。Effect.withLogSpan、Effect.fn、
-  withRetryLogging、ログ分類（access/application/audit）、PII 非出力、
-  メッセージコード規約、RequestContext、W3C trace。
-  トリガー: ログ、トレース、observability、logging、telemetry、
-  Effect.logInfo、Effect.withLogSpan、PII、監査ログ、audit、
-  Cloud Trace、RequestContext
+  Logging, tracing, and metrics implementation rules. Covers Effect.withLogSpan,
+  Effect.fn, withRetryLogging, log classification (access/application/audit),
+  no-PII output, message code conventions, RequestContext, W3C trace.
+  Triggers: logging, tracing, observability, telemetry,
+  Effect.logInfo, Effect.withLogSpan, PII, audit log,
+  Cloud Trace, RequestContext.
 version: 1.0.0
 ---
 

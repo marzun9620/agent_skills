@@ -1,24 +1,31 @@
-# Workflow skills
+# Codex-Effect Workflows (niche)
 
-Clean-architecture and Codex-CLI workflow skills, geared toward Effect-TS + Drizzle + Hono backends with layered domain/usecase/infrastructure separation. Many descriptions are in Japanese — the skills themselves drive bilingual implementation steps.
+[NICHE] Skills for Codex CLI workflows in a layered Effect-TS + Drizzle + Hono architecture. Most of the bodies are in Japanese (originally written for an internal team). Useful only if you've adopted this specific stack — otherwise, the other plugins are a better fit.
 
 | Skill | Description |
 |---|---|
-| [`workflow-adapter-handler`](workflow-adapter-handler/) | HTTP Handler（Hono + OpenAPI）の実装手順。adapter 層のみ Effect.runPromise 許可。 describeRoute で OpenAPI 定義、Presenter で Domain → DTO 変換。 トリガー: API endpoint 作成、Hono handler、HTTP adapter、REST API、 OpenAPI、describeRoute、ルーティング |
-| [`workflow-close-plan`](workflow-close-plan/) | 完了した plan を done/ に移動し、lessons learned を記録して commit + push する。 /run 完了後や /review APPROVED 後に呼ぶ。 トリガー: /close-plan, plan完了, planをdoneに, lessons記録 |
-| [`workflow-codex-implement`](workflow-codex-implement/) | Codex CLI に plan の 1 task を TDD 実装させるスキル。 `codex exec --full-auto` の呼び出しパターン、Resume（修正指示）、Post-check を定義。 トリガー: /run、Codex 実装委譲、TDD 実装、plan task 実行 |
-| [`workflow-codex-plan-review`](workflow-codex-plan-review/) | Codex CLI にプランレビューを委譲するスキル。ユーザー提示前に致命的問題を検出。 Initial Review + Re-review（resume --last）の反復パターン。最大5回ループ。 トリガー: /plan レビュー、Codex プランレビュー、plan 品質チェック |
-| [`workflow-codex-review`](workflow-codex-review/) | Codex CLI にコードレビューを委譲するスキル。read-only sandbox で実行。 Mode A: per-task review（git diff HEAD~1）、Mode B: PR review（gh pr diff）。 トリガー: /run レビュー、/review、Codex レビュー委譲、コードレビュー |
-| [`workflow-di-composition`](workflow-di-composition/) | DI 層（Composition Root）の Layer 登録手順。appLayer.ts への追加方法、 Layer 依存順、テスト用 Layer の作り方、ManagedRuntime の使い方。 トリガー: DI、Layer 登録、appLayer、Composition Root、 Layer.mergeAll、Layer.provide、テスト Layer、ManagedRuntime、 依存注入、サービス登録 |
-| [`workflow-domain-entity`](workflow-domain-entity/) | Domain Entity の実装手順。Schema.Class + Brand で Entity 定義、Value Object、 Domain Error（Schema.TaggedError）、barrel export。 トリガー: domain entity 作成、Schema.Class、Brand型、ドメインモデル、 Value Object、ドメインエラー、domain層実装 |
-| [`workflow-execlog-write`](workflow-execlog-write/) | 実行ログ（.execlog/）への記録手順。各 task 完了後にエントリ追加。 Final Handoff エントリは plan 完了時。 トリガー: execlog、実行ログ、進捗記録、タスク完了記録、 night-run ログ、handoff |
-| [`workflow-gateway`](workflow-gateway/) | Gateway（外部 API クライアント）の実装手順。Port を Context.Tag で定義し、 Infrastructure で Layer.effect 実装。GatewayError でラップ、externalApiRetryPolicy 適用。 トリガー: gateway 作成、外部 API、Capsule、TableCheck、HTTP クライアント、 外部サービス連携、API 呼び出し、webhook |
-| [`workflow-linear-ops`](workflow-linear-ops/) | Linear issue の操作手順。@schpet/linear-cli を使った issue の ステータス更新、コメント追加、PR 連携。 トリガー: Linear、issue 更新、ステータス変更、linear-comment、 linear-update、進捗報告、In Review |
-| [`workflow-observability`](workflow-observability/) | ログ・トレース・メトリクスの実装ルール。Effect.withLogSpan、Effect.fn、 withRetryLogging、ログ分類（access/application/audit）、PII 非出力、 メッセージコード規約、RequestContext、W3C trace。 トリガー: ログ、トレース、observability、logging、telemetry、 Effect.logInfo、Effect.withLogSpan、PII、監査ログ、audit、 Cloud Trace、RequestContext |
-| [`workflow-plan-update`](workflow-plan-update/) | Plan ファイル（.planning/plans/）のチェックボックス更新と Status 管理。 task 完了時に checkbox を更新し、全 task 完了で done/ に移動。 トリガー: plan更新、タスク完了マーク、チェックボックス、 plan status、計画更新 |
-| [`workflow-pr-create`](workflow-pr-create/) | PR 作成手順。task check 全通過を確認し、gh pr create で PR を作成。 plan の Linear ID があれば Linear 更新。 トリガー: PR作成、プルリクエスト、ship、gh pr create、 マージリクエスト、コードレビュー依頼 |
-| [`workflow-repository`](workflow-repository/) | Repository（Port + Infrastructure）の実装手順。Port を Context.Tag で定義し、 Drizzle ORM で Layer.effect 実装。Integration test は real DB。 トリガー: repository 作成、Drizzle実装、port定義、DB操作、 infrastructure実装、Layer.effect、findById、データベース |
-| [`workflow-test-factory`](workflow-test-factory/) | テスト用 Factory の作成手順。DB に insert するための Factory パターン。 Drizzle ORM + Vitest 環境で使用。 トリガー: Factory 作成、テストデータ、テストヘルパー、 EntityFactory、create、build、テストフィクスチャ |
-| [`workflow-usecase`](workflow-usecase/) | UseCase の実装手順。Effect<A, E, R> で定義し、Port 経由で infrastructure に依存。 E channel に全エラー型を明示。Unit test は Port を mock Layer で差し替え。 トリガー: usecase 作成、ビジネスロジック、ユースケース実装、 Effect.gen、Effect.fn、ドメインロジック |
+| [`workflow-adapter-handler`](skills/workflow-adapter-handler/) | HTTP Handler implementation guide (Hono + OpenAPI). Only the adapter layer is allowed to call Effect.runPromise. Use describeRoute for OpenAPI definitions and Presenter for Domain → DTO conversion. Triggers: API endpoint creation, Hono handler, HTTP adapter, REST API, OpenAPI, describeRoute, routing. |
+| [`workflow-close-plan`](skills/workflow-close-plan/) | Move a completed plan to done/, record lessons learned, then commit + push. Call after /run completes or /review is APPROVED. Triggers: /close-plan, plan completion, move plan to done, record lessons. |
+| [`workflow-codex-implement`](skills/workflow-codex-implement/) | Delegate one plan task to Codex CLI for TDD implementation. Defines the `codex exec --full-auto` invocation pattern, Resume (corrections), and Post-check. Triggers: /run, Codex implementation delegation, TDD implementation, plan task execution. |
+| [`workflow-codex-plan-review`](skills/workflow-codex-plan-review/) | Delegate plan review to Codex CLI. Detects critical issues before showing the plan to the user. Iterative Initial Review + Re-review (resume --last) pattern; up to 5 loops. Triggers: /plan review, Codex plan review, plan quality check. |
+| [`workflow-codex-review`](skills/workflow-codex-review/) | Delegate code review to Codex CLI in a read-only sandbox. Mode A: per-task review (git diff HEAD~1). Mode B: PR review (gh pr diff). Triggers: /run review, /review, Codex review delegation, code review. |
+| [`workflow-di-composition`](skills/workflow-di-composition/) | Layer registration in the DI layer (Composition Root). Covers adding to appLayer.ts, Layer dependency order, how to build test Layers, and using ManagedRuntime. Triggers: DI, Layer registration, appLayer, Composition Root, Layer.mergeAll, Layer.provide, test Layer, ManagedRuntime, dependency injection, service registration. |
+| [`workflow-domain-entity`](skills/workflow-domain-entity/) | Domain Entity implementation guide. Define entities with Schema.Class + Brand, plus Value Objects, Domain Errors (Schema.TaggedError), and barrel exports. Triggers: domain entity creation, Schema.Class, Brand types, domain model, Value Object, domain error, domain layer implementation. |
+| [`workflow-execlog-write`](skills/workflow-execlog-write/) | Recording entries to the execution log (.execlog/). Append an entry after each task completes; write the Final Handoff entry when the plan completes. Triggers: execlog, execution log, progress recording, task completion log, night-run log, handoff. |
+| [`workflow-gateway`](skills/workflow-gateway/) | Gateway (external API client) implementation guide. Define the Port as a Context.Tag and implement with Layer.effect in Infrastructure. Wrap errors in GatewayError and apply externalApiRetryPolicy. Triggers: gateway creation, external API, Capsule, TableCheck, HTTP client, external service integration, API call, webhook. |
+| [`workflow-linear-ops`](skills/workflow-linear-ops/) | Linear issue operations using @schpet/linear-cli — status updates, adding comments, PR linking. Triggers: Linear, issue update, status change, linear-comment, linear-update, progress report, In Review. |
+| [`workflow-observability`](skills/workflow-observability/) | Logging, tracing, and metrics implementation rules. Covers Effect.withLogSpan, Effect.fn, withRetryLogging, log classification (access/application/audit), no-PII output, message code conventions, RequestContext, W3C trace. Triggers: logging, tracing, observability, telemetry, Effect.logInfo, Effect.withLogSpan, PII, audit log, Cloud Trace, RequestContext. |
+| [`workflow-plan-update`](skills/workflow-plan-update/) | Checkbox updates and status management for plan files (.planning/plans/). Update checkboxes as tasks complete; move the plan to done/ once all tasks are done. Triggers: plan update, task completion mark, checkbox, plan status, plan revision. |
+| [`workflow-pr-create`](skills/workflow-pr-create/) | PR creation flow. Verify all task checks pass, then create the PR with `gh pr create`. If the plan has a Linear ID, update Linear too. Triggers: PR creation, pull request, ship, gh pr create, merge request, code review request. |
+| [`workflow-repository`](skills/workflow-repository/) | Repository (Port + Infrastructure) implementation guide. Define the Port as a Context.Tag and implement with Drizzle ORM via Layer.effect. Integration tests use a real DB. Triggers: repository creation, Drizzle implementation, port definition, DB operation, infrastructure implementation, Layer.effect, findById, database. |
+| [`workflow-test-factory`](skills/workflow-test-factory/) | Test Factory authoring guide — Factory pattern for inserting rows into the database. Used in Drizzle ORM + Vitest environments. Triggers: Factory creation, test data, test helper, EntityFactory, create, build, test fixture. |
+| [`workflow-usecase`](skills/workflow-usecase/) | UseCase implementation guide. Define as Effect<A, E, R>; depend on infrastructure through Ports. Make all error types explicit in the E channel. In unit tests, swap Ports via mock Layers. Triggers: usecase creation, business logic, usecase implementation, Effect.gen, Effect.fn, domain logic. |
 
-_See the [repo README](../README.md) for install instructions._
+## Install just this plugin
+
+```
+/plugin marketplace add marzun9620/agent_skills
+/plugin install codex-effect-workflows@marzun9620-skills
+```
+
+_See the [repo README](../README.md) for the full picture._

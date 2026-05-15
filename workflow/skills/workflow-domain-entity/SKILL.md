@@ -1,10 +1,10 @@
 ---
 name: workflow-domain-entity
 description: >
-  Domain Entity の実装手順。Schema.Class + Brand で Entity 定義、Value Object、
-  Domain Error（Schema.TaggedError）、barrel export。
-  トリガー: domain entity 作成、Schema.Class、Brand型、ドメインモデル、
-  Value Object、ドメインエラー、domain層実装
+  Domain Entity implementation guide. Define entities with Schema.Class + Brand,
+  plus Value Objects, Domain Errors (Schema.TaggedError), and barrel exports.
+  Triggers: domain entity creation, Schema.Class, Brand types, domain model,
+  Value Object, domain error, domain layer implementation.
 version: 1.1.0
 ---
 

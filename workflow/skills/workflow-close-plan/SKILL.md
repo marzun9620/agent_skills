@@ -1,9 +1,9 @@
 ---
 name: workflow-close-plan
 description: >
-  完了した plan を done/ に移動し、lessons learned を記録して commit + push する。
-  /run 完了後や /review APPROVED 後に呼ぶ。
-  トリガー: /close-plan, plan完了, planをdoneに, lessons記録
+  Move a completed plan to done/, record lessons learned, then commit + push.
+  Call after /run completes or /review is APPROVED.
+  Triggers: /close-plan, plan completion, move plan to done, record lessons.
 version: 1.0.0
 user_invocable: true
 ---

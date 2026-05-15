@@ -282,7 +282,7 @@ application/app/routes/
 ### Migrated Structure
 
 ```
-frontendv2/app/
+your-app/
 ├── pages/
 │   ├── login/
 │   ├── signup/

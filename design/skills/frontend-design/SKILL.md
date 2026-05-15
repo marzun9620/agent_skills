@@ -1,9 +1,9 @@
 ---
 name: frontend-design
-description: Generate Feature-Sliced Design (FSD) components for frontendv2. Use when creating pages, features, entities, widgets, or shared modules following FSD architecture with React Router v7 + Effect + Tailwind CSS.
+description: Generate Feature-Sliced Design (FSD) components. Use when creating pages, features, entities, widgets, or shared modules following FSD architecture with React Router v7 + Effect + Tailwind CSS.
 ---
 
-# Feature-Sliced Design (FSD) for frontendv2
+# Feature-Sliced Design (FSD)
 
 ## Overview
 
@@ -48,7 +48,7 @@ Modules can only import from layers **strictly below**:
 ## Directory Structure
 
 ```
-frontendv2/app/
+your-app/
 ├── app/                    # App layer
 │   ├── providers/          # Context providers
 │   ├── styles/             # Global styles
@@ -139,7 +139,7 @@ See: `references/widgets.md`
 
 Mapping from current `application/` structure to FSD:
 
-| application/         | frontendv2/ (FSD)             |
+| application/         | FSD                            |
 | -------------------- | ----------------------------- |
 | `domain/`            | `entities/{entity}/model/`    |
 | `workflow/`          | `features/{feature}/model/`   |

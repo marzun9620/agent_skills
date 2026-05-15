@@ -1,9 +1,10 @@
 ---
 name: workflow-codex-plan-review
 description: >
-  Codex CLI にプランレビューを委譲するスキル。ユーザー提示前に致命的問題を検出。
-  Initial Review + Re-review（resume --last）の反復パターン。最大5回ループ。
-  トリガー: /plan レビュー、Codex プランレビュー、plan 品質チェック
+  Delegate plan review to Codex CLI. Detects critical issues before showing
+  the plan to the user. Iterative Initial Review + Re-review (resume --last)
+  pattern; up to 5 loops.
+  Triggers: /plan review, Codex plan review, plan quality check.
 version: 1.0.0
 ---
 

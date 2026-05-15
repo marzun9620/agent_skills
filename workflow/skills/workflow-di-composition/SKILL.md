@@ -1,11 +1,12 @@
 ---
 name: workflow-di-composition
 description: >
-  DI 層（Composition Root）の Layer 登録手順。appLayer.ts への追加方法、
-  Layer 依存順、テスト用 Layer の作り方、ManagedRuntime の使い方。
-  トリガー: DI、Layer 登録、appLayer、Composition Root、
-  Layer.mergeAll、Layer.provide、テスト Layer、ManagedRuntime、
-  依存注入、サービス登録
+  Layer registration in the DI layer (Composition Root). Covers adding to
+  appLayer.ts, Layer dependency order, how to build test Layers, and using
+  ManagedRuntime.
+  Triggers: DI, Layer registration, appLayer, Composition Root,
+  Layer.mergeAll, Layer.provide, test Layer, ManagedRuntime,
+  dependency injection, service registration.
 version: 1.0.0
 ---
 

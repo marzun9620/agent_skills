@@ -1,10 +1,10 @@
 ---
 name: workflow-linear-ops
 description: >
-  Linear issue の操作手順。@schpet/linear-cli を使った issue の
-  ステータス更新、コメント追加、PR 連携。
-  トリガー: Linear、issue 更新、ステータス変更、linear-comment、
-  linear-update、進捗報告、In Review
+  Linear issue operations using @schpet/linear-cli — status updates,
+  adding comments, PR linking.
+  Triggers: Linear, issue update, status change, linear-comment,
+  linear-update, progress report, In Review.
 version: 1.0.0
 ---
 
