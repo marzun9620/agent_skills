@@ -1,0 +1,9 @@
+{
+  "name": "communication",
+  "description": "Output-style skills that change how Claude writes responses (caveman compression, zoom-out).",
+  "version": "1.0.0",
+  "author": {
+    "name": "marzun9620",
+    "url": "https://github.com/marzun9620"
+  }
+}

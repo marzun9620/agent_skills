@@ -1,0 +1,9 @@
+{
+  "name": "dev-process",
+  "description": "Engineering process skills: ADR drafting, disciplined bug diagnosis, and codebase architecture review.",
+  "version": "1.0.0",
+  "author": {
+    "name": "marzun9620",
+    "url": "https://github.com/marzun9620"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "effect-ts",
+  "description": "23 reference skills for Effect-TS — schema, runtime, error management, streams, testing, and more. Use when writing TypeScript with the Effect library.",
+  "version": "1.0.0",
+  "author": {
+    "name": "marzun9620",
+    "url": "https://github.com/marzun9620"
+  }
+}
