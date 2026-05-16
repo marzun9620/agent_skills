@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "marzun9620-skills",
-  "description": "Curated Claude Code skills for engineering, planning, design, and Effect-TS development. 59 skills across 8 plugins.",
+  "description": "Curated Claude Code skills for engineering, planning, design, QA, and Effect-TS development. 64 skills across 9 plugins.",
   "owner": {
     "name": "marzun9620",
     "url": "https://github.com/marzun9620"
@@ -70,6 +70,14 @@
       "version": "1.0.0",
       "category": "productivity",
       "tags": ["style", "communication", "output"]
+    },
+    {
+      "name": "qa",
+      "source": "./qa",
+      "description": "QA-persona skills: write test plans from PRDs, draft high-quality bug reports, convert acceptance criteria into executable test cases, plan exploratory testing sessions (SBTM), and review PRs from a testability / regression-risk lens. 5 skills.",
+      "version": "1.0.0",
+      "category": "development",
+      "tags": ["qa", "testing", "test-plan", "bug-report", "exploratory-testing", "sbtm"]
     }
   ]
 }
