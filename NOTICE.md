@@ -61,6 +61,7 @@ The following may be original to this repo, or may have an upstream source I cou
 ### Original to this repo (© marzun9620, MIT)
 
 - All 16 `workflow-*` skills (under the `codex-effect-workflows` plugin) — written for an internal project and adapted for this repo.
+- `meta/skills/prompt-refinement` — refines rough instructions into structured Agent Task Prompts for delegation to other agents.
 - `install.sh`, `README.md`, `CONTRIBUTING.md`, all `<category>/README.md` files, the `.claude-plugin/marketplace.json` catalog, and the `.claude-plugin/plugin.json` manifests are repo-maintenance artefacts produced by the maintainer.
 - The `_template/SKILL.md` starter file.
 
