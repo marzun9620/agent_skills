@@ -6,7 +6,7 @@
 [![Last commit](https://img.shields.io/github/last-commit/marzun9620/agent_skills)](https://github.com/marzun9620/agent_skills/commits/main)
 [![GitHub stars](https://img.shields.io/github/stars/marzun9620/agent_skills?style=social)](https://github.com/marzun9620/agent_skills/stargazers)
 
-> **My personal [Claude Code](https://code.claude.com) skills, kept in one place.** 59 skills across 8 categories — TDD, debugging, ADRs, Playwright, Effect-TS reference, plan stress-testing, and more.
+> **My personal [Claude Code](https://code.claude.com) skills, kept in one place.** 64 skills across 9 categories — TDD, debugging, ADRs, Playwright, Effect-TS reference, plan stress-testing, QA test planning & bug reports, and more.
 
 You're welcome to use any of them, copy individual skills into your own projects, or open a PR to add yours. These are what I actually use day-to-day — not a curated commercial product. Your mileage may vary.
 
@@ -83,6 +83,7 @@ cd ~/agent_skills
 |---|---:|---|
 | [`effect-ts`](effect-ts/) | 23 | Schema, runtime, error management, streams, testing, and every other corner of [Effect-TS](https://effect.website). |
 | [`planning`](planning/) | 6 | brainstorming, grill-me, grill-with-docs, to-issues, to-prd, triage. |
+| [`qa`](qa/) | 5 | qa-test-plan, qa-bug-report, qa-test-cases, qa-exploratory-charter, qa-pr-review. QA-persona authoring skills. |
 | [`testing`](testing/) | 4 | TDD red-green-refactor + Playwright (CLI, test runner, project conventions). |
 | [`dev-process`](dev-process/) | 3 | adr-drafter, diagnose, improve-codebase-architecture. |
 | [`meta`](meta/) | 3 | write-a-skill, find-skills, setup-matt-pocock-skills. |
@@ -134,6 +135,7 @@ agent_skills/
 ├── testing/
 ├── design/
 ├── planning/
+├── qa/
 ├── dev-process/
 ├── meta/
 └── communication/

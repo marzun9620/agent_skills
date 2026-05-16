@@ -1,0 +1,9 @@
+{
+  "name": "qa",
+  "description": "QA-persona skills: write test plans from PRDs, draft high-quality bug reports, convert acceptance criteria into executable test cases, plan exploratory testing sessions (SBTM), and review PRs from a testability / regression-risk lens.",
+  "version": "1.0.0",
+  "author": {
+    "name": "marzun9620",
+    "url": "https://github.com/marzun9620"
+  }
+}
