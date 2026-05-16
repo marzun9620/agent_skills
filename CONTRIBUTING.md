@@ -27,7 +27,16 @@ A few conventions to keep the repo consistent:
    # then open Claude Code in any project and type /<your-skill-name>
    ```
 
-6. Open a PR with a short summary of what the skill does and why it's general-purpose.
+6. Run the validator (same one CI runs):
+
+   ```bash
+   pip install pyyaml          # one-time
+   ./scripts/validate.py
+   ```
+
+   It checks frontmatter, JSON manifests, plugin-source paths, NOTICE.md attribution, naming conventions, description length, body size, and that `install.sh` discovers your skill. CI runs this on every PR and **blocks the merge** if it fails.
+
+7. Open a PR with a short summary of what the skill does and why it's general-purpose.
 
 ## How to fix or improve an existing skill
 
