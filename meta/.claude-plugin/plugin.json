@@ -1,10 +1,9 @@
 {
   "name": "meta",
-  "description": "Skills about skills — find existing ones, write new ones, bootstrap a curated personal set. Skills authored by Matt Pocock (MIT); redistributed here with attribution — see NOTICE.md.",
-  "version": "1.0.0",
+  "description": "Skills about skills — find existing ones, write new ones, bootstrap a curated personal set, refine prompts before delegating to other agents. Mostly Matt Pocock skills (MIT) plus original contributions; see NOTICE.md for per-skill attribution.",
+  "version": "1.1.0",
   "author": {
-    "name": "Matt Pocock",
-    "url": "https://github.com/mattpocock/skills"
-  },
-  "homepage": "https://github.com/mattpocock/skills"
+    "name": "Mixed authors — see NOTICE.md",
+    "url": "https://github.com/marzun9620/agent_skills/blob/main/NOTICE.md"
+  }
 }
