@@ -1,6 +1,7 @@
 # agent_skills
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![CI](https://github.com/marzun9620/agent_skills/actions/workflows/ci.yml/badge.svg)](https://github.com/marzun9620/agent_skills/actions/workflows/ci.yml)
 [![Latest release](https://img.shields.io/github/v/release/marzun9620/agent_skills)](https://github.com/marzun9620/agent_skills/releases)
 [![Last commit](https://img.shields.io/github/last-commit/marzun9620/agent_skills)](https://github.com/marzun9620/agent_skills/commits/main)
 [![GitHub stars](https://img.shields.io/github/stars/marzun9620/agent_skills?style=social)](https://github.com/marzun9620/agent_skills/stargazers)
